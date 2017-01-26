@@ -5,5 +5,8 @@
 * На любой существующий маршрут (route) может быть наложен "виртуальный" URL (псевдо-маршрут).
 * Любой "виртуальный" URL может вообще не ссылаться на конкретный Controller и Action, а читать данные для отображения страницы из базы данных.
 
+## Скриншот
+![seo friendly links for ASP.NET MVC 5](http://www.calabonga.net/uploads/images/185/185-100.png)
+
 ## Ссылки
 [Статья в блоге](http://www.calabonga.net/blog/post/185)
