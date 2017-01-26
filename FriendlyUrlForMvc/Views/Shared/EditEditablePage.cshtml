@@ -1,0 +1,60 @@
+﻿@model FriendlyUrlForMvc.Web.Models.EditablePageUpdateViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@section header
+{
+    <meta name="description" content="@Model.Description">
+    <meta name="keywords" content="@Model.Keywords">
+    @Styles.Render("~/Content/editor")
+}
+@if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")) {
+    <a href="" class="btn btn-info">Правка</a>
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>
+                @ViewBag.Title
+            </h1>
+        </div>
+        @using (Html.BeginForm()) {
+            <div class="form-group">
+                @Html.LabelFor(x => Model.Title)
+                @Html.TextBoxFor(x => Model.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => Model.Title)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => Model.Description)
+                @Html.TextBoxFor(x => Model.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => Model.Description)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => Model.Keywords)
+                @Html.TextBoxFor(x => Model.Keywords, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => Model.Keywords)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => Model.Content)
+                @Html.TextAreaFor(x => Model.Content, new { @class = "form-control froala-editor" })
+                @Html.ValidationMessageFor(x => Model.Content)
+            </div>
+            <div class="form-group">
+                <div data-bind="editor: comments"></div>
+            </div>
+            <p>
+                <input class="btn btn-primary" type="submit" value="Сохранить" />
+            </p>
+        }
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/editor")
+    <script src="~/Scripts/app.editable.page.js"></script>
+}

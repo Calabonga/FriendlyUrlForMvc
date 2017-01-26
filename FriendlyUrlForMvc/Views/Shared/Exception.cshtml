@@ -1,0 +1,22 @@
+﻿@model Exception
+@{
+    ViewBag.Title = "Ошибка";
+}
+<div class="page-header">
+    <h1>
+        @ViewBag.Title
+        <small>извините</small>
+    </h1>
+</div>
+<p style="font-size: 1.2em; color: Red; font-weight: bold;">Сообщение об ошибке уже отправлено разработчикам. Надеемся на ваше понимание.</p>
+<p style="font-weight: bold;">@Model.Message</p>
+<p>
+    Вы можете:
+</p>
+<ul>
+    <li>Перейти на главную @Html.ActionLink("страницу", "index", "home"). </li>
+</ul>
+<fieldset style="font-size:.85em;">
+    <legend>Информация для разработчиков</legend>
+    @Html.Raw(@Model.StackTrace)
+</fieldset>

@@ -1,0 +1,24 @@
+﻿@model FriendlyUrlForMvc.Models.EditablePage
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@section header
+{
+    <meta name="description" content="@Model.Description">
+    <meta name="keywords" content="@Model.Keywords">
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>
+                @ViewBag.Title
+                <small>просмотр</small>
+            </h1>
+        </div>
+        @Html.Raw(Model.Content)
+    </div>
+    @*@if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")) {*@
+        <a href="@Url.Action("edit","site", new {id = Model.Id})" class="btn btn-info">Правка</a>
+    @*}*@
+</div>
