@@ -6,7 +6,7 @@
 * Любой "виртуальный" URL может вообще не ссылаться на конкретный Controller и Action, а читать данные для отображения страницы из базы данных.
 
 ## Скриншот
-![seo friendly links for ASP.NET MVC 5](http://www.calabonga.net/uploads/images/185/185-100.png)
+![seo friendly links for ASP.NET MVC 5](https://www.calabonga.net/uploads/asp-net-mvc-optimizaciya-ssylok-na-saite-ili-seo-friendly-mvc/185-100.png)
 
 ## Ссылки
-[Статья в блоге](http://www.calabonga.net/blog/post/185)
+[Статья в блоге](https://www.calabonga.net/blog/post/asp-net-mvc-optimizaciya-ssylok-na-saite-ili-seo-friendly-mvc)
